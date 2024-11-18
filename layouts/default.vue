@@ -18,14 +18,14 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <NuxtLink class="nav-link active" to="/">首頁</NuxtLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <NuxtLink class="nav-link" to="/room" target="_blank">房型</NuxtLink>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
