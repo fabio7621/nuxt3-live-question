@@ -26,7 +26,7 @@ fetch(apiUrl)
 
 const isProvide = function (isProvideBoolean = false) {
   return isProvideBoolean ? "提供" : "未提供";
-};
+}; // 共用函式
 </script>
 
 <template>
@@ -67,7 +67,7 @@ const isProvide = function (isProvideBoolean = false) {
             <div class="info-block">
               <h2>房間配置</h2>
               <ul>
-                <li v-for="layout in roomObject.layoutInfo" :key="layout.title">{{ layout.title }}: {{ isProvide(layout.isProvide) }}</li>
+                <li v-for="roomSite in roomObject.layoutInfo" :key="roomSite.title">{{ roomSite.title }}: {{ isProvide(roomSite.isProvide) }}</li>
               </ul>
             </div>
 
@@ -81,7 +81,7 @@ const isProvide = function (isProvideBoolean = false) {
             <div class="info-block">
               <h2>客房備品</h2>
               <ul>
-                <li v-for="amenity in roomObject.amenityInfo" :key="amenity.title">{{ amenity.title }}: {{ isProvide(amenity.isProvide) }}</li>
+                <li v-for="roomitem in roomObject.amenityInfo" :key="roomitem.title">{{ roomitem.title }}: {{ isProvide(roomitem.isProvide) }}</li>
               </ul>
             </div>
           </div>
