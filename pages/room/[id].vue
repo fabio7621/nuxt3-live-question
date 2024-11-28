@@ -35,6 +35,13 @@ useSeoMeta({
   twitterImage: () => `${roomObject.value.imageUrl}`,
 });
 */
+const pageTitle = ref("Freyja");
+const titleTemplate = computed(
+  () => `${pageTitle.value} | ${roomObject.value.name}`
+);
+const mainPictureUrl = computed(
+  () => `https://freyja.travel.com.tw/room/${roomObject.value._id}`
+);
 
 const isProvide = function (isProvideBoolean = false) {
   return isProvideBoolean ? "提供" : "未提供";
@@ -43,7 +50,16 @@ const isProvide = function (isProvideBoolean = false) {
 
 <template>
   <Head>
-    <!-- 請在此處作答，使用元件設定頁面的 SEO Meta  -->
+    <Title>{{ titleTemplate }}</Title>
+    <Meta name="description" :content="roomObject.description" />
+    <Meta property="og:title" :content="titleTemplate" />
+    <Meta property="og:description" :content="roomObject.description" />
+    <Meta property="og:image" :content="roomObject.imageUrl" />
+    <Meta property="og:url" :content="mainPictureUrl" />
+    <Meta name="twitter:card" content="summary_large_image" />
+    <Meta name="twitter:title" :content="titleTemplate" />
+    <Meta name="twitter:description" :content="roomObject.description" />
+    <Meta name="twitter:image" :content="roomObject.imageUrl" />
   </Head>
 
   <h2>房型詳細頁面</h2>
